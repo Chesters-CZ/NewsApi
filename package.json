@@ -13,5 +13,11 @@
   "devDependencies": {
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "optional": "^0.1.4",
+    "popper": "^1.0.1"
   }
 }
