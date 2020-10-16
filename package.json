@@ -15,6 +15,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "optional": "^0.1.4",
