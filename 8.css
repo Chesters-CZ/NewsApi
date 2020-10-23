@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .pc {
   font-family: Bahnschrift;
 }
@@ -15,7 +16,7 @@
   align-self: stretch;
 }
 
-.cookiechck{
+.cookiechck {
   padding-left: 5%;
   color: #e1e1e4;
   cursor: pointer;
@@ -31,20 +32,15 @@
   width: 90%;
 }
 
-input[class="cooky"]:checked + label .cookie{
+input[class=cooky]:checked + label .cookie {
   display: none;
 }
 
-input[class="cooky"] + label .cookie{
-
-}
-
-input[class="cooky"] {
+input[class=cooky] {
   display: none;
 }
 
 /* konec cookies, začátek navbaru */
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -60,7 +56,6 @@ input[class="cooky"] {
 .unit {
   padding: 25px;
   color: black;
-
 }
 
 .m {
@@ -81,13 +76,12 @@ input[class="cooky"] {
   text-align: right;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 /* konec navbaru, content ahead */
-
 .center {
   display: flex;
   justify-content: center;
@@ -235,9 +229,8 @@ a{
 }
 
 /* mobil verze below */
-
 @media screen and (min-width: 721px) {
-    .foun {
+  .foun {
     display: none;
   }
 
@@ -274,10 +267,8 @@ a{
     alignment: right;
     flex-grow: 2;
     flex-shrink: 1;
-
   }
 }
-
 .fittwovert {
   display: flex;
   flex-direction: column;
@@ -326,13 +317,13 @@ fitting {
   margin: 20px;
   width: 45%;
 }
+
 .undertwopicturs {
   alignment: right;
   flex-grow: 2;
   flex-shrink: 1;
   width: 100%;
   height: 75%;
-
 }
 
 .undertwoheadc {
@@ -364,3 +355,5 @@ fitting {
 .link {
   color: midnightblue;
 }
+
+/*# sourceMappingURL=8.css.map */

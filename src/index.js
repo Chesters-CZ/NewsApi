@@ -2,23 +2,52 @@ import {generateNewsBox} from "./components";
 
 const axios = require("axios");
 
-window.onload = function() {
-    const odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?country=cz&apiKey=a35c735a4617414e8031a21950572432").then(function(res) {
-        const articls =  res.data.articles;
-        /*const header = document.createElement('h1'); // <h1>Welcome</h1>
-        header.innerText = "Welcome";
-        document.body.appendChild(header);
+let odaxiosu;
+let articls;
+window.onload = function () {
+    let batn = document.getElementById("button");
+    console.log("b4");
+    batn.addEventListener("click", workDamnit());
+    console.log("aftr");
+    setTimeout(workDamnit(), 2000)
+}
 
-        const news = generateNewsBox("My first news", "Hello blablabla");
-        document.body.appendChild(news);*/
+function workDamnit() {
+    let daddy = document.getElementById("div");
+    for (let i = 0; i < daddy.childElementCount; i++) {
+        daddy.removeChild(daddy.childNodes[i]);
+    }
 
-        let ble;
-        let fuj;
-        for(let i=0; i<articls.length; i++) {
-            ble = generateNewsBox(articls[i].title, articls[i].description, articls[i].author, articls[i].publishedAt, articls[i].source.name, articls[i].url);
-            fuj = document.getElementById("div");
-            fuj.appendChild(ble);
-        }
-    });
 
+    console.log("workDamnit started")
+    let otpot;
+    let query = document.getElementsByName("search")[0].value;
+    console.log(query);
+    if (query.length > 0) { //TODO: fix search bar - as of right now, the search thing doesnt work. i will most likely have to use onclick instead of addeventlistener or petkodytek. i am most likely making a mistake when adding the eventlistener, but have no idea where
+        odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?" + query + "country=cz&apiKey=a35c735a4617414e8031a21950572432").then(function (res) {
+            let artikls = res.data.articles;
+            let ble;
+            let fuj;
+            for (let i = 0; i < artikls.length; i++) {
+                let splitthething = artikls[i].publishedAt;
+                let datume = splitthething.split("T")[0];
+                ble = generateNewsBox(artikls[i].title, artikls[i].description, artikls[i].author, datume, artikls[i].source.name, artikls[i].url);
+                fuj = document.getElementById("div");
+                fuj.appendChild(ble);
+            }
+        })
+    } else {
+        odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?country=cz&apiKey=a35c735a4617414e8031a21950572432").then(function (res) {
+            let artikls = res.data.articles;
+            let ble;
+            let fuj;
+            for (let i = 0; i < artikls.length; i++) {
+                let splitthething = artikls[i].publishedAt;
+                let datume = splitthething.split("T")[0];
+                ble = generateNewsBox(artikls[i].title, artikls[i].description, artikls[i].author, datume, artikls[i].source.name, artikls[i].url);
+                fuj = document.getElementById("div");
+                fuj.appendChild(ble);
+            }
+        })
+    }
 }
