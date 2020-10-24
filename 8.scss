@@ -15,7 +15,7 @@
   align-self: stretch;
 }
 
-.cookiechck{
+.cookiechck {
   padding-left: 5%;
   color: #e1e1e4;
   cursor: pointer;
@@ -31,11 +31,11 @@
   width: 90%;
 }
 
-input[class="cooky"]:checked + label .cookie{
+input[class="cooky"]:checked + label .cookie {
   display: none;
 }
 
-input[class="cooky"] + label .cookie{
+input[class="cooky"] + label .cookie {
 
 }
 
@@ -81,7 +81,7 @@ input[class="cooky"] {
   text-align: right;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -237,7 +237,7 @@ a{
 /* mobil verze below */
 
 @media screen and (min-width: 721px) {
-    .foun {
+  .foun {
     display: none;
   }
 
@@ -326,6 +326,7 @@ fitting {
   margin: 20px;
   width: 45%;
 }
+
 .undertwopicturs {
   alignment: right;
   flex-grow: 2;

@@ -6,10 +6,8 @@ let odaxiosu;
 let articls;
 window.onload = function () {
     let batn = document.getElementById("button");
-    console.log("b4");
     batn.addEventListener("click", workDamnit());
-    console.log("aftr");
-    setTimeout(workDamnit(), 2000)
+    setTimeout(workDamnit(), 5000);
 }
 
 function workDamnit() {

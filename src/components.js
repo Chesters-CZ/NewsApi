@@ -1,5 +1,3 @@
-
-
 export function generateNewsBox(title, description, author, publishedAt, sourcename, link) {
     let container = document.createElement('div');
     container.setAttribute("id", "papi")
