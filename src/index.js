@@ -6,23 +6,28 @@ let odaxiosu;
 let articls;
 window.onload = function () {
     let batn = document.getElementById("button");
-    batn.addEventListener("click", workDamnit());
+    batn.addEventListener("click", workDamnit);
+    console.log(batn);
     setTimeout(workDamnit(), 5000);
 }
 
 function workDamnit() {
     let daddy = document.getElementById("div");
-    for (let i = 0; i < daddy.childElementCount; i++) {
-        daddy.removeChild(daddy.childNodes[i]);
+    if (daddy.children.length > 0) {
+        for (let i = daddy.children.length; i > 0; i--) {
+            daddy.removeChild(daddy.childNodes[0]);
+            console.log("removing" + i);
+        }
     }
+    console.log(daddy.childNodes.length);
 
-
-    console.log("workDamnit started")
+    console.log("workDamnit started");
     let otpot;
     let query = document.getElementsByName("search")[0].value;
     console.log(query);
-    if (query.length > 0) { //TODO: fix search bar - as of right now, the search thing doesnt work. i will most likely have to use onclick instead of addeventlistener or petkodytek. i am most likely making a mistake when adding the eventlistener, but have no idea where
-        odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?" + query + "country=cz&apiKey=a35c735a4617414e8031a21950572432").then(function (res) {
+    if (query.length > 0) { //now works, however, TODO: fix search bar
+        odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?q=" + query + "&country=cz&pageSize=20&apiKey=a35c735a4617414e8031a21950572432").then(function (res) {
+            console.log("custom axios request - " + query);
             let artikls = res.data.articles;
             let ble;
             let fuj;
@@ -36,6 +41,7 @@ function workDamnit() {
         })
     } else {
         odaxiosu = axios.get("http://newsapi.org/v2/top-headlines?country=cz&apiKey=a35c735a4617414e8031a21950572432").then(function (res) {
+            console.log("default axios request");
             let artikls = res.data.articles;
             let ble;
             let fuj;
@@ -48,4 +54,16 @@ function workDamnit() {
             }
         })
     }
+    setTimeout(function () {
+            console.log("kunt " + daddy.childElementCount);
+            if (daddy.childElementCount < 1) {
+                let fukup = document.createElement("h1");
+                fukup.classList.add("center");
+                fukup.classList.add("error");
+                fukup.innerText = "Oops! Looks like there aren't any results for your query.";
+                daddy.appendChild(fukup);
+            }
+        }, 750
+    )
+
 }

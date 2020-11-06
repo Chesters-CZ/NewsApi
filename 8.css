@@ -40,11 +40,20 @@ input[class=cooky] {
   display: none;
 }
 
+.aligncenter {
+  justify-content: center;
+}
+
 /* konec cookies, začátek navbaru */
 .navbar {
   display: flex;
   justify-content: space-between;
   background-color: darkgray;
+}
+
+.error {
+  font-style: italic;
+  text-align: center;
 }
 
 .l {
@@ -87,6 +96,7 @@ a {
   justify-content: center;
   align-items: stretch;
   align-self: stretch;
+  height: 100%;
 }
 
 .column {
@@ -105,6 +115,7 @@ a {
   flex-direction: column;
   background-color: whitesmoke;
   padding: 7px;
+  height: 100%;
 }
 
 .smolcontent {
