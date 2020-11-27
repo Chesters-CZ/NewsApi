@@ -1,4 +1,8 @@
 import {generateNewsBox} from "./components";
+import 'bootstrap';
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/dropdown';
+
 
 const axios = require("axios");
 
